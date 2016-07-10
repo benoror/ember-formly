@@ -9,6 +9,7 @@ const {
 export default Ember.Component.extend({
   layout,
   field: {},
+  record: {},
 
   selectFieldComponent: computed('field', function() {
     const field = get(this, 'field');
