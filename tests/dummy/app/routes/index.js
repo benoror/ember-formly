@@ -1,17 +1,13 @@
 import Ember from 'ember';
 
-const {
-  set
-} = Ember;
-
 export default Ember.Route.extend({
   model() {
     return {
       fields: [
         {
           key: 'email',
-          type: 'input',
-          templateOptions: {
+          component: 'simple-input',
+          options: {
             type: 'email',
             label: 'Email address',
             placeholder: 'Enter email'
@@ -19,8 +15,8 @@ export default Ember.Route.extend({
         },
         {
           key: 'password',
-          type: 'input',
-          templateOptions: {
+          component: 'simple-input',
+          options: {
             type: 'password',
             label: 'Password',
             placeholder: 'Password'
@@ -28,14 +24,14 @@ export default Ember.Route.extend({
         },
         {
           key: 'checked',
-          type: 'input',
-          templateOptions: {
+          component: 'simple-input',
+          options: {
             type: 'checkbox',
             label: 'Check me out'
           }
         }
       ],
-      data: {
+      model: {
         email: 'my@email.com',
         password: 's3cre7',
         checked: true
@@ -45,7 +41,6 @@ export default Ember.Route.extend({
 
   setupController(controller, model) {
     this._super(...arguments);
-    set(controller, 'fields', model.fields);
-    set(controller, 'record', model.data);
+    controller.setProperties(model);
   }
 });

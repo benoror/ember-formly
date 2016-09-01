@@ -8,13 +8,13 @@ const {
 
 export default Ember.Component.extend({
   layout,
+
   field: {},
-  record: {},
+  model: {},
 
-  selectFieldComponent: computed('field', function() {
+  getFieldComponent: computed('field', function() {
     const field = get(this, 'field');
-    const type = get(field, 'type') || 'unknown';
-
-    return `ember-formly-field-${type}`;
+    const component = get(field, 'component');
+    return component || 'ember-formly-component-unknown';
   })
 });
