@@ -1,7 +1,7 @@
 {
   "name": "ember-formly",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,15 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/benoror/ember-formly",
+  "bugs": {
+    "url": "https://github.com/benoror/ember-formly/issues"
+  },
+  "homepage": "https://github.com/benoror/ember-formly",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Ben Orozco <benoror@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
