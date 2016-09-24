@@ -7,6 +7,8 @@ const {
 } = Ember;
 
 export default Ember.Component.extend({
+  tagName: '',
+
   value: computed('model', 'key', {
     get(key) {
       key = get(this, 'key');
