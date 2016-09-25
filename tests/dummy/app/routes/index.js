@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       fields: [
         {
           key: 'email',
-          component: 'html-input',
+          component: 'ember-formly-fields/html-input',
           options: {
             type: 'email',
             label: 'Email address',
@@ -15,7 +15,7 @@ export default Ember.Route.extend({
         },
         {
           key: 'password',
-          component: 'html-input',
+          component: 'ember-formly-fields/html-input',
           options: {
             type: 'password',
             label: 'Password',
@@ -24,7 +24,7 @@ export default Ember.Route.extend({
         },
         {
           key: 'checked',
-          component: 'html-input',
+          component: 'ember-formly-fields/html-input',
           options: {
             type: 'checkbox',
             label: 'Check me out'

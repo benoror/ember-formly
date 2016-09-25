@@ -1,5 +1,6 @@
 import Ember from 'ember';
-import EmberFormlyComponent from 'ember-formly/components/ember-formly-component';
+import layout from '../../templates/components/ember-formly-fields/html-input';
+import EmberFormlyComponent from '../ember-formly-component';
 
 const {
   get,
@@ -7,6 +8,8 @@ const {
 } = Ember;
 
 export default EmberFormlyComponent.extend({
+  layout,
+
   label: computed.alias('options.label'),
 
   placeholder: computed.alias('options.placeholder'),
