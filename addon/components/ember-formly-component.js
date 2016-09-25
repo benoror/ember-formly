@@ -20,15 +20,6 @@ export default Ember.Component.extend({
       set(get(this, 'model'), key, value);
       return value;
     }
-  }),
-
-  type: computed('options', function() {
-    const options = get(this, 'options');
-    return get(options, 'type') || 'text';
-  }),
-
-  label: computed.alias('options.label'),
-
-  placeholder: computed.alias('options.placeholder')
+  })
 
 });
