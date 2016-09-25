@@ -29,12 +29,23 @@ export default Ember.Route.extend({
             type: 'checkbox',
             label: 'Check me out'
           }
+        },
+        {
+          key: 'slider',
+          component: 'ember-formly-fields/html-input',
+          options: {
+            type: 'range',
+            label: 'Slide me out',
+            min: 1,
+            max: 5
+          }
         }
       ],
       model: {
         email: 'my@email.com',
         password: 's3cre7',
-        checked: true
+        checked: true,
+        slider: 4
       }
     };
   },

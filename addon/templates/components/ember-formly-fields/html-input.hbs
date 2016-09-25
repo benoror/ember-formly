@@ -1,18 +1,28 @@
 <div class="form-group">
-  <label for="{{key}}">{{label}}</label>
+  <label for="{{key}}">{{options.label}}</label>
 
   {{#if (eq type "checkbox")}}
     {{input class="form-control"
       checked=(mut value)
       name=key
       type=type
-      placeholder=placeholder }}
-  {{else}}
+      placeholder=options.placeholder }}
+  {{else if (eq type "range")}}
     {{input class="form-control"
-    value=(mut value)
+      value=(mut value)
       name=key
       type=type
-      placeholder=placeholder }}
-    {{/if}}
+      min=options.min
+      max=options.max
+      placeholder=options.placeholder }}
+    {{value}}
+  {{else}}
+    {{input class="form-control"
+      value=(mut value)
+      name=key
+      type=type
+      placeholder=options.placeholder }}
+  {{/if}}
+
 </div>
 
