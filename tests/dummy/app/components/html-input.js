@@ -7,17 +7,12 @@ const {
 } = Ember;
 
 export default EmberFormlyComponent.extend({
-  type: computed('options', function() {
-    const options = get(this, 'options');
-    return get(options, 'type') || 'text';
-  }),
-
   label: computed.alias('options.label'),
 
   placeholder: computed.alias('options.placeholder'),
 
-  checked: computed('value', function() {
-    return !!get(this, 'value');
+  type: computed('options', function() {
+    const options = get(this, 'options');
+    return get(options, 'type') || 'text';
   })
-
 });
