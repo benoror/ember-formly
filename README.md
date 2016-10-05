@@ -4,11 +4,7 @@
 
 [![NPM](https://nodei.co/npm/ember-formly.png)](https://npmjs.org/package/ember-formly)
 
-[![Ember Observer Score](https://emberobserver.com/badges/ember-formly.svg)](https://emberobserver.com/addons/ember-formly)
-
-[![Build Status](https://travis-ci.org/benoror/ember-formly.svg?branch=master)](https://travis-ci.org/benoror/ember-formly)
-
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+![Download count all time](https://img.shields.io/npm/dt/ember-formly.svg) [![Ember Observer Score](https://emberobserver.com/badges/ember-formly.svg)](https://emberobserver.com/addons/ember-formly) [![Build Status](https://travis-ci.org/benoror/ember-formly.svg?branch=master)](https://travis-ci.org/benoror/ember-formly) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ember-formly is an Ember.js addon based on [angular-formly](https://github.com/formly-js/angular-formly)
 
