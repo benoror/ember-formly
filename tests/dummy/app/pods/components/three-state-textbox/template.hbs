@@ -1,0 +1,21 @@
+<div>
+  {{options.label}}
+</div>
+
+<div>
+  {{three-state-textbox/radio-button
+    record=value
+    value=true
+    name=key}} Yes
+
+  {{three-state-textbox/radio-button
+    record=value
+    value=false
+    name=key}} No
+</div>
+
+{{#if value.active}}
+  {{textarea
+    value=value.text}}
+{{/if}}
+

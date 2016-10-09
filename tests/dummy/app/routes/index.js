@@ -64,6 +64,19 @@ export default Ember.Route.extend({
               {key: 'z', label: 'Option Z'}
             ]
           }
+        },
+        {
+          key: 'optionaltext',
+          component: 'three-state-textbox',
+          options: {
+            label: 'Optional text (three-state-textbox)',
+            inputs: [
+              {key: 'w', label: 'Option W'},
+              {key: 'x', label: 'Option X'},
+              {key: 'y', label: 'Option Y'},
+              {key: 'z', label: 'Option Z'}
+            ]
+          }
         }
       ],
       model: {
@@ -72,7 +85,8 @@ export default Ember.Route.extend({
         checked: true,
         slider: 4,
         chooseone: 'c',
-        choosemany: { w:false, x:true, y:false, z:true }
+        choosemany: { w:false, x:true, y:false, z:true },
+        optionaltext: { active:true, text:'Ok' }
       }
     };
   },
