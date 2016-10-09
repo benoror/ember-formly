@@ -51,6 +51,19 @@ export default Ember.Route.extend({
               {key: 'c', label: 'Option C'}
             ]
           }
+        },
+        {
+          key: 'choosemany',
+          component: 'checkboxes-inputs',
+          options: {
+            label: 'Chose many (checkboxes)',
+            inputs: [
+              {key: 'w', label: 'Option W'},
+              {key: 'x', label: 'Option X'},
+              {key: 'y', label: 'Option Y'},
+              {key: 'z', label: 'Option Z'}
+            ]
+          }
         }
       ],
       model: {
@@ -58,7 +71,8 @@ export default Ember.Route.extend({
         password: 's3cre7',
         checked: true,
         slider: 4,
-        chooseone: 'c'
+        chooseone: 'c',
+        choosemany: { w:false, x:true, y:false, z:true }
       }
     };
   },

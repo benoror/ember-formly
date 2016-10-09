@@ -1,0 +1,13 @@
+<div>
+  <span class="checkboxes--label">{{options.label}}</span>
+  <br />
+  {{#each inputs as |item|}}
+    {{input 
+      type="checkbox"
+      checked=(mut (get value item.key))
+      name=(concat key '_' item.key)}}
+    <span class="checkboxes--input--label">{{item.label}}</span>
+    <br />
+  {{/each}}
+</div>
+
