@@ -39,13 +39,26 @@ export default Ember.Route.extend({
             min: 1,
             max: 5
           }
+        },
+        {
+          key: 'chooseone',
+          component: 'radios-inputs',
+          options: {
+            label: 'Chose one (radios)',
+            inputs: [
+              {key: 'a', label: 'Option A'},
+              {key: 'b', label: 'Option B'},
+              {key: 'c', label: 'Option C'}
+            ]
+          }
         }
       ],
       model: {
         email: 'my@email.com',
         password: 's3cre7',
         checked: true,
-        slider: 4
+        slider: 4,
+        chooseone: 'c'
       }
     };
   },

@@ -1,0 +1,14 @@
+<div>
+  <span class="radios--label">{{options.label}}</span>
+  <br />
+  {{#each inputs as |item|}}
+    {{radio-button
+      value=item.key
+      groupValue=value
+      name=key
+      changed='setValue'}}
+    <span class="radios--input--label">{{item.label}}</span>
+  {{/each}}
+</div>
+
+
