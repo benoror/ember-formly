@@ -13,7 +13,14 @@ export default Component.extend({
   attributeBindings: ['type', 'name', 'checked:checked'],
 
   click() {
-    set(get(this, 'record'), 'active', get(this, 'value'));
+    const record = get(this, 'record');
+    const value = get(this, 'value');
+
+    if(record) {
+      set(record, 'active', value);
+    } else {
+      set(this, 'record', { active: value, text: '' });
+    }
   },
 
   checked: computed('record.active', 'value', function() {
