@@ -12,7 +12,7 @@ export default Ember.Component.extend({
   value: computed('model', 'key', {
     get(key) {
       key = get(this, 'key');
-      return get(this, 'model')[key];
+      return get(this, 'model.' + key);
     },
 
     set(key, value) {

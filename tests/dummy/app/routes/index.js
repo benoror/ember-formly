@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.get('store').createRecord('form', {
+    const form = this.get('store').createRecord('form', {
       document: {
         email: 'my@email.com',
         //password: 's3cre7',
@@ -11,13 +11,25 @@ export default Ember.Route.extend({
         chooseone: 'c'
         //choosemany: { w:false, x:true, y:false, z:true },
         //optionaltext: { active:true, text:'Ok' }
+      },
+      nested: {
+        foo: 'bar',
+        meep: { active:true, text:'Ok' }
       }
     });
+    // Equivalent
+    //form.set('nested', this.get('store').createFragment('objFragment', {
+      //foo: 'bar',
+      //meep: { active:true, text:'Ok' }
+    //}));
+
+    return form;
   },
 
-  setupController(controller, model) {
+  setupController(controller/**, model**/) {
     this._super(...arguments);
-    const fields = [
+
+    const documentFields = [
       {
         key: 'email',
         component: 'ember-formly-fields/html-input',
@@ -83,16 +95,31 @@ export default Ember.Route.extend({
         key: 'optionaltext',
         component: 'three-state-textbox',
         options: {
-          label: 'Optional text (three-state-textbox)',
-          inputs: [
-            {key: 'w', label: 'Option W'},
-            {key: 'x', label: 'Option X'},
-            {key: 'y', label: 'Option Y'},
-            {key: 'z', label: 'Option Z'}
-          ]
+          label: 'Optional text (three-state-textbox)'
         }
       }
     ];
-    controller.set('fields', fields);
+
+    const nestedFields = [
+      {
+        key: 'foo',
+        component: 'ember-formly-fields/html-input',
+        options: {
+          type: 'text',
+          label: 'Foo',
+          placeholder: 'Enter foo'
+        }
+      },
+      {
+        key: 'meep',
+        component: 'three-state-textbox',
+        options: {
+          label: 'Meep (nested fragment)'
+        }
+      }
+    ];
+
+    controller.set('documentFields', documentFields);
+    controller.set('nestedFields', nestedFields);
   }
 });

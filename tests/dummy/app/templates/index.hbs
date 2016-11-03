@@ -1,6 +1,17 @@
-<h3>Test Form</h3>
+<h3>Test JSON Document</h3>
 
 {{ember-formly
-  fields=fields
+  fields=documentFields
   fieldClassName='form-control'
   model=model.document }}
+
+<h3>Test Nested Fragments</h3>
+
+<p>(see <a href="https://github.com/lytics/ember-data-model-fragments">github.com/lytics/ember-data-model-fragments</a>)</p>
+
+{{model.nested.meep.text}}
+
+{{ember-formly
+  fields=nestedFields
+  fieldClassName='form-control'
+  model=model.nested }}
