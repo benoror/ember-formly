@@ -3,15 +3,13 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     const form = this.get('store').createRecord('form', {
-      document: {
-        email: 'my@email.com',
-        //password: 's3cre7',
-        checked: true,
-        //slider: 4,
-        chooseone: 'c'
-        //choosemany: { w:false, x:true, y:false, z:true },
-        //optionaltext: { active:true, text:'Ok' }
-      },
+      email: 'my@email.com',
+      password: 's3cre7',
+      checked: true,
+      slider: 4,
+      chooseone: 'c',
+      choosemany: { w:false, x:true, y:false, z:true },
+      optionaltext: { active:true, text:'Ok' },
       nested: {
         foo: 'bar',
         meep: { active:true, text:'Ok' }
@@ -29,7 +27,7 @@ export default Ember.Route.extend({
   setupController(controller/**, model**/) {
     this._super(...arguments);
 
-    const documentFields = [
+    const fields = [
       {
         key: 'email',
         component: 'ember-formly-fields/html-input',
@@ -119,7 +117,7 @@ export default Ember.Route.extend({
       }
     ];
 
-    controller.set('documentFields', documentFields);
+    controller.set('fields', fields);
     controller.set('nestedFields', nestedFields);
   }
 });

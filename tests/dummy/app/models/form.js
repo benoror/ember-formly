@@ -8,8 +8,12 @@ import {
 } from 'model-fragments/attributes';
 
 export default Model.extend({
-  document: attr({
-    defaultValue: () => { return {}; }
-  }),
+  email: attr('string'),
+  password: attr('string'),
+  checked: attr('boolean'),
+  slider: attr('number'),
+  chooseone: attr('string'),
+  choosemany: attr(),
+  optionaltext: attr(),
   nested: fragment('objFragment')
 });
