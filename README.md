@@ -22,7 +22,7 @@ ember install ember-formly
 
 ### Route/Component/Controller:
 
-```
+```javascript
   model() {
     return {
       age: 20,
@@ -68,15 +68,31 @@ ember install ember-formly
   })
 ```
 
-### Template:
+### Basic Template
 
-```
+```handlebars
 {{ember-formly fields=fields model=model}}
 ```
 
-# Usage
+### `fieldClassName`
 
-> [PENDING]
+Apply a `class` to each `field`:
+
+```handlebars
+{{ember-formly fields=fields model=model fieldClassName="foobar"}}
+```
+
+#### Block
+
+Use custom markup for each field:
+
+```handlebars
+{{#ember-formly fields=fields as |field|}}
+  <div class="baz-wrapper">
+    {{ember-formly-field field=field model=model.nested}}
+  </div>
+{{/ember-formly}}
+```
 
 # Development
 

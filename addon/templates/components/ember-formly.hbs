@@ -1,6 +1,7 @@
 {{#each fields as |field|}}
-  {{ember-formly-field
-    class=fieldClassName
-    field=field
-    model=model}}
+  {{#if hasBlock}}
+    {{yield field}}
+  {{else}}
+    {{ember-formly-field class=fieldClassName field=field model=model}}
+  {{/if}}
 {{/each}}

@@ -1,3 +1,16 @@
 .form-control {
   padding: 4px 4px 8px 4px;
 }
+
+.outer-wrapper {
+  border-left: 2px solid gray;
+  padding: 8px;
+  background-color: #eee;
+}
+
+.inner-wrapper {
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  padding: 4px;
+  margin: 4px;
+}

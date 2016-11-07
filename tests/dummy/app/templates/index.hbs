@@ -5,13 +5,14 @@
   fieldClassName='form-control'
   model=model }}
 
-<h3>Test Nested Fragments</h3>
+<div class="outer-wrapper">
+  <h3>Test Nested Fragments</h3>
 
-<p>(see <a href="https://github.com/lytics/ember-data-model-fragments">github.com/lytics/ember-data-model-fragments</a>)</p>
+  <p>(see <a href="https://github.com/lytics/ember-data-model-fragments">github.com/lytics/ember-data-model-fragments</a>)</p>
 
-{{model.nested.meep.text}}
-
-{{ember-formly
-  fields=nestedFields
-  fieldClassName='form-control'
-  model=model.nested }}
+  {{#ember-formly fields=nestedFields as |field|}}
+    <div class="inner-wrapper">
+      {{ember-formly-field field=field model=model.nested}}
+    </div>
+  {{/ember-formly}}
+</div>
