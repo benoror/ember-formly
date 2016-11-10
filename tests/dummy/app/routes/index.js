@@ -7,6 +7,8 @@ export default Ember.Route.extend({
       password: 's3cre7',
       checked: true,
       slider: 4,
+      color: '#0000ff',
+      date: '',
       chooseone: 'c',
       choosemany: { w:false, x:true, y:false, z:true },
       optionaltext: { active:true, text:'Ok' },
@@ -62,6 +64,21 @@ export default Ember.Route.extend({
           label: 'Slide me out',
           min: 1,
           max: 5
+        }
+      },
+      {
+        key: 'color',
+        component: 'ember-formly-fields/html-input',
+        options: {
+          type: 'color',
+          label: 'Pick a color!'
+        }
+      },
+      {
+        key: 'date',
+        component: 'date-picker',
+        options: {
+          label: 'Pick a date!'
         }
       },
       {

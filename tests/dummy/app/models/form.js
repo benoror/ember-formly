@@ -12,6 +12,8 @@ export default Model.extend({
   password: attr('string'),
   checked: attr('boolean'),
   slider: attr('number'),
+  color: attr('string'),
+  date: attr('date'),
   chooseone: attr('string'),
   choosemany: attr(),
   optionaltext: attr(),
