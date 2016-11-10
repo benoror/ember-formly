@@ -1,7 +1,10 @@
 <div class="form-group">
+
     <label for="{{key}}">{{options.label}}</label>
 
-      {{pikaday-input value=value}}
+    {{pikaday-input
+    value=value
+    onSelection=(action options.callback)}}
 
 </div>
 

@@ -78,7 +78,10 @@ export default Ember.Route.extend({
         key: 'date',
         component: 'date-picker',
         options: {
-          label: 'Pick a date!'
+          label: 'Pick a date!',
+          callback: function(value) {
+            window.alert('Selected date: ' + value);
+          }
         }
       },
       {

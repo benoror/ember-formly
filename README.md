@@ -82,7 +82,7 @@ Apply a `class` to each `field`:
 {{ember-formly fields=fields model=model fieldClassName="foobar"}}
 ```
 
-#### Block
+### Block
 
 Use custom markup for each field:
 
@@ -92,6 +92,33 @@ Use custom markup for each field:
     {{ember-formly-field field=field model=model.nested}}
   </div>
 {{/ember-formly}}
+```
+
+## Advanced Usage
+
+### Callback actions
+
+```javascript
+const fields = [
+  {
+    key: 'date',
+    component: 'date-picker',
+    options: {
+      label: 'Pick a date!',
+      callback: function(value) {
+        window.alert('Selected date: ' + value);
+      }
+    }
+  }
+];
+```
+
+date-picker.js:
+
+```handlebars
+  {{pikaday-input
+    value=value
+    onSelection=(action options.callback)}}
 ```
 
 # Development
