@@ -3,8 +3,8 @@
   <br />
   {{#each inputs as |item|}}
     <input type="checkbox"
-           checked={{get value item.key}}
-           onclick={{action (action "setChecked" item.key) value="target.checked"}}
+           checked={{array-contains value item.key}}
+           onclick={{action "setChecked" item.key}}
            name={{concat key '_' item.key}} />
     <span class="checkboxes--input--label">{{item.label}}</span>
     <br />

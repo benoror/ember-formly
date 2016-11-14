@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       color: '#0000ff',
       date: '',
       chooseone: 'c',
-      choosemany: { w:false, x:true, y:false, z:true },
+      choosemany: ['x', 'z'],
       optionaltext: { active:true, text:'Ok' },
       nested: {
         foo: 'bar',

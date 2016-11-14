@@ -13,15 +13,15 @@ export default EmberFormlyComponent.extend({
   }),
 
   actions: {
-    setChecked(key, val) {
-      const value = get(this, 'value');
+    setChecked(key) {
+      let value = get(this, 'value');
 
-      if(value) {
-        set(value, key, val);
-      } else {
-        let tmp = {};
-        tmp[key] = val;
-        set(this, 'value', tmp);
+      if(!value) {
+        value = [];
+      }
+
+      if(!value.includes(key)) {
+        value.pushObject(key);
       }
     }
   }

@@ -2,9 +2,9 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 // import { belongsTo, hasMany } from 'ember-data/relationships';
 import {
-  fragment
+  fragment,
   //fragmentArray,
-  //array
+  array
 } from 'model-fragments/attributes';
 
 export default Model.extend({
@@ -15,7 +15,7 @@ export default Model.extend({
   color: attr('string'),
   date: attr('date'),
   chooseone: attr('string'),
-  choosemany: attr(),
+  choosemany: array('string'),
   optionaltext: attr(),
   nested: fragment('objFragment')
 });
