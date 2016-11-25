@@ -15,9 +15,9 @@ test('it renders', function(assert) {
     </div>
   `);
 
-  let div = this.$('div.outer-wrapper');
+  let pre = this.$('div.outer-wrapper > pre');
 
-  assert.equal(div.text().trim(), 'Ember Formly: Unknown Component',
-    'render unknown component');
+  assert.equal(pre.text().trim(), 'Ember Formly: Unknown Component',
+    'render without wrapper divs');
 });
 

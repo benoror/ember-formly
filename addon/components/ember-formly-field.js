@@ -8,6 +8,7 @@ const {
 
 export default Ember.Component.extend({
   layout,
+  tagName: '',
 
   field: {},
   model: {},
