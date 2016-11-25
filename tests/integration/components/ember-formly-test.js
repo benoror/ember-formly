@@ -8,17 +8,18 @@ moduleForComponent('ember-formly', 'Integration | Component | ember formly', {
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{ember-formly}}`);
 
   assert.equal(this.$().text().trim(), '');
 
-  // Template block usage:
+  // Simply passing strings array to test block usage:
+  this.set('fields', ['a','b','c']);
+
   this.render(hbs`
-    {{#ember-formly}}
-      template block text
+    {{#ember-formly fields=fields as |field|}}
+      {{field}}
     {{/ember-formly}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim().replace(/[ \n]/g, ''), 'abc');
 });
