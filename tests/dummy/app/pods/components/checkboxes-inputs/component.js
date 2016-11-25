@@ -3,7 +3,6 @@ import EmberFormlyComponent from 'ember-formly/components/ember-formly-component
 
 const {
   get,
-  set,
   computed
 } = Ember;
 
