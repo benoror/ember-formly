@@ -8,7 +8,7 @@ const {
 
 export default EmberFormlyComponent.extend({
   isActive: computed('value.active', function() {
-    return !!get(this, 'value.active');
+    return get(this, 'value.active') === true;
   })
 });
 
