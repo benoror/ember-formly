@@ -3,6 +3,7 @@ import EmberFormlyComponent from 'ember-formly/components/ember-formly-component
 
 const {
   get,
+  set,
   computed
 } = Ember;
 
@@ -12,15 +13,20 @@ export default EmberFormlyComponent.extend({
   }),
 
   actions: {
-    setChecked(key) {
-      let value = get(this, 'value');
+    setChecked(prop) {
+      let model = get(this, 'model');
+      let key = get(this, 'key');
 
-      if(!value) {
-        value = [];
+      if (!get(model, key)) {
+        set(model, key, Ember.A());
       }
 
-      if(!value.includes(key)) {
-        value.pushObject(key);
+      let values = get(model, key);
+
+      if (values.includes(prop)) {
+        values.removeObject(prop);
+      } else {
+        values.pushObject(prop);
       }
     }
   }
