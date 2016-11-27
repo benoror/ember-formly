@@ -15,6 +15,10 @@ export default Ember.Route.extend({
       nested: {
         foo: 'bar',
         meep: { active:true, text:'Ok' }
+      },
+      group: {
+        foo: 'oof',
+        bar: 'rab'
       }
     });
     // Equivalent
@@ -137,7 +141,38 @@ export default Ember.Route.extend({
       }
     ];
 
+    const fieldGroup = [
+      {
+        key: 'group',
+        component: 'field-group',
+        options: {
+          title: 'Group Title',
+          fields: [
+            {
+              key: 'foo',
+              component: 'ember-formly-fields/html-input',
+              options: {
+                type: 'text',
+                label: 'Foo',
+                placeholder: 'Enter foo'
+              }
+            },
+            {
+              key: 'bar',
+              component: 'ember-formly-fields/html-input',
+              options: {
+                type: 'text',
+                label: 'Bar',
+                placeholder: 'Enter bar'
+              }
+            }
+          ]
+        }
+      }
+    ];
+
     controller.set('fields', fields);
     controller.set('nestedFields', nestedFields);
+    controller.set('fieldGroup', fieldGroup);
   }
 });
