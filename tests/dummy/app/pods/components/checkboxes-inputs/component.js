@@ -14,14 +14,17 @@ export default EmberFormlyComponent.extend({
 
   actions: {
     setChecked(prop) {
-      let model = get(this, 'model');
       let key = get(this, 'key');
 
-      if (!get(model, key)) {
-        set(model, key, Ember.A());
+      if (!get(this, 'model')) {
+        set(this, 'model', {});
       }
 
-      let values = get(model, key);
+      if (!get(this, `model.${key}`)) {
+        set(get(this, 'model'), key, Ember.A());
+      }
+
+      let values = get(this, `model.${key}`);
 
       if (values.includes(prop)) {
         values.removeObject(prop);

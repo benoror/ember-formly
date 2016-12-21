@@ -16,8 +16,10 @@ export default Ember.Component.extend({
     },
 
     set(key, value) {
-      key = get(this, 'key');
-      set(get(this, 'model'), key, value);
+      if(!get(this, 'model')) {
+        set(this, 'model', {});
+      }
+      set(get(this, 'model'), get(this, 'key'), value);
       return value;
     }
   })

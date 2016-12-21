@@ -21,5 +21,5 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$('h3').text().trim(),
-    'Test Label', 'The component shows label');
+    'Test Title', 'The component shows label');
 });
