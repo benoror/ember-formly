@@ -9,6 +9,7 @@ module.exports = {
     },
     {
       name: 'ember-1.13',
+      allowedToFail: true,
       bower: {
         dependencies: {
           'ember': '~1.13.0'
