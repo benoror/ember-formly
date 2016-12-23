@@ -1,0 +1,16 @@
+<div>
+  <span class="dropdown--label">{{options.label}}</span>
+  <br />
+  <select onchange={{action (mut value) value="target.value"}}>
+    <option value="">Select one</option>
+    {{#each options.options as |option|}}
+      <option value={{option.value}}
+        selected={{eq option.value value}}>
+          {{option.label}}
+      </option>
+    {{/each}}
+  </select>
+</div>
+
+
+

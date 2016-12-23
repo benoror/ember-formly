@@ -101,6 +101,18 @@ export default Ember.Route.extend({
         }
       },
       {
+        key: 'chooseone',
+        component: 'dropdown-inputs',
+        options: {
+          label: 'Chose one (dropdown)',
+          options: [
+            {value: 'a', label: 'Option A'},
+            {value: 'b', label: 'Option B'},
+            {value: 'c', label: 'Option C'}
+          ]
+        }
+      },
+      {
         key: 'choosemany',
         component: 'checkboxes-inputs',
         options: {
