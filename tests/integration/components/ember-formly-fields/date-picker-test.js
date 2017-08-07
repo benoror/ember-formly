@@ -1,4 +1,5 @@
 import { moduleForComponent, test } from 'ember-qunit';
+import wait from 'ember-test-helpers/wait';
 import hbs from 'htmlbars-inline-precompile';
 import { openDatepicker } from 'ember-pikaday/helpers/pikaday';
 
@@ -30,9 +31,11 @@ test('it mutates an empty ({}) model', function(assert) {
 
   let interactor = openDatepicker(this.$('input'));
 
-  interactor.selectDate(new Date(1989, 3, 28));
+  return wait().then(() => {
+    interactor.selectDate(new Date(1989, 3, 28));
+    assert.equal(this.get('model.test'), '28-03-1989', 'User interaction mutates the model');
+  });
 
-  assert.equal(this.get('model.test'), '28-03-1989', 'User interaction mutates the model');
 });
 
 //test('it mutates a `null` model', function(assert) {

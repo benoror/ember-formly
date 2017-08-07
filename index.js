@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-formly'
+  name: 'ember-formly',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
