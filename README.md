@@ -89,7 +89,10 @@ Use custom markup for each field:
 ```handlebars
 {{#ember-formly fields=fields as |field|}}
   <div class="baz-wrapper">
-    {{ember-formly-field field=field model=model.nested}}
+    {{ember-formly-field
+      field=field
+      model=model.nested
+      onchange=(action 'foobar')}}
   </div>
 {{/ember-formly}}
 ```
