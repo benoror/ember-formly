@@ -1,6 +1,6 @@
 {
   "name": "ember-formly",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "directories": {
     "doc": "doc",
@@ -54,7 +54,7 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "versionCompatibility": {
-       "ember": ">1.11.0 <=2.0.0"
+      "ember": ">1.11.0 <=2.0.0"
     }
   }
 }
